@@ -34,7 +34,7 @@ export default function Profile() {
     }
 
     function showUpdateProfile() {
-        console.log("wallet id ", params.walletid);
+        
         if (!params.walletid) {
             return (
                 <Button variant="contained" sx={{ width: "100%" }} onClick={() => updateProfile()}>Update Profile</Button>
@@ -56,9 +56,9 @@ export default function Profile() {
         //get posts from author 
         window.contract.getPostsFrom({ accountId: accountId, from: 0, to: 100 })
             .then(ob => {
-                console.log("get list posts from author", ob);
+                
                 const postsArr = ob.map(ob => JSON.parse(ob));
-                console.log("postArr", postsArr);
+                
                 setPosts(postsArr);
 
             })
