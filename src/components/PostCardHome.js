@@ -41,11 +41,11 @@ export default function PostCardHome(props) {
     //comment feature
     const openCommentSection = () => {
         setExpandComment(!expandComment);
-        console.log("set expandcomment", expandComment);
+        
     }
     const openDonateSection = () => {
         setDonate(true);
-        console.log("open donate section ")
+        
     }
 
     const inputRef = useRef(null);
@@ -86,7 +86,7 @@ export default function PostCardHome(props) {
     function addComment() {
         var inputCmt = inputRef.current.value;
         if (inputCmt.trim(0).length == 0) return;
-        console.log("cmt subbmited! ", inputCmt);
+        
 
         var cmt2 = Array.from(cmts);
 
@@ -106,11 +106,11 @@ export default function PostCardHome(props) {
             .catch(err => {
                 console.log("add cmt err", err);
             })
-        console.log(cmts);
+        
     }
 
     function toggleFav() {
-        console.log("post fav", post)
+        
         toggleFavorite(post.id, post);
         setFav(!fav);
     }
